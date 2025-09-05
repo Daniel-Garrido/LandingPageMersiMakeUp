@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --color-primario:#e4c5b0;
+  --color-secundario:#613228;
+  --color-fondo:#fcf8f3;
+  --color-texto:#000000;
+}
+
+
+h1{
+  font-size: 45px;
+  font-family:  "Didact Gothic", sans-serif;
+  font-weight: 400;
+  color: var(--color-secundario);
+}
+
+.parrafo{   font-family: "Cormorant Garamond", serif;
+   font-size: 24px;
+   font-style: italic;
+   font-weight: 400;
+   color: var(--color-texto);
+}
