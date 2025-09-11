@@ -18,9 +18,22 @@ h1{
   color: var(--color-secundario);
 }
 
-.parrafo{   font-family: "Cormorant Garamond", serif;
+h2{
+    font-family:  "Didact Gothic", sans-serif;
+}
+
+.parrafo{ 
+   font-family: "Cormorant Garamond", serif;
    font-size: 24px;
    font-style: italic;
    font-weight: 400;
    color: var(--color-texto);
+}
+
+.boton-contenido {
+    color: white;
+    text-decoration: none;
+    background-color: var(--color-secundario);
+    border: none;
+    padding: 10px 20px;
 }
