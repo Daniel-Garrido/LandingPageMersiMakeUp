@@ -6,35 +6,35 @@
       </h2>
 
       <!-- Grid de 3 columnas -->
-      <div class="row g-4 justify-content-center">
+      <div class="service row g-4 justify-content-center">
         
         <!-- Servicio 1 -->
         <div class="col-md-4 text-center">
           <div class="service-card" data-bs-toggle="modal" data-bs-target="#modalBridal">
-            <img src="/Img/Servicio.jpg" class="img-fluid rounded" alt="Bridal Makeup" />
+            <img src="/Img/ServicioCejas1.jpg" class="img-fluid rounded" alt="Bridal Makeup" />
           </div>
-          <h5 class="mt-3">Bridal Makeup</h5>
+          <h5 class="mt-3">Cejas</h5>
         </div>
 
         <!-- Servicio 2 -->
         <div class="col-md-4 text-center">
           <div class="service-card" data-bs-toggle="modal" data-bs-target="#modalHair">
-            <img src="/Img/Servicio3.jpg" class="img-fluid rounded" alt="Hair Makeup" />
+            <img src="/Img/ServicioMaquillaje2.png" class="img-fluid rounded" alt="Hair Makeup" />
           </div>
-          <h5 class="mt-3">Hair Makeup</h5>
+          <h5 class="mt-3">Maquillaje</h5>
         </div>
 
         <!-- Servicio 3 -->
         <div class="col-md-4 text-center">
           <div class="service-card" data-bs-toggle="modal" data-bs-target="#modalFace">
-            <img src="/Img/Servicio2.jpg" class="img-fluid rounded" alt="Face & Eye Makeup" />
+            <img src="/Img/ServicioLashLifting3.jpg" class="img-fluid rounded" alt="Face & Eye Makeup" />
           </div>
-          <h5 class="mt-3">Face & Eye Makeup</h5>
+          <h5 class="mt-3">Lash Lifting</h5>
         </div>
       </div>
     </div>
 
-    <!-- Modal Bridal -->
+    <!-- Modal cejas -->
     <div class="modal fade" id="modalBridal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content p-4">
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <!-- Modal Hair -->
+    <!-- Modal Maquillaje -->
     <div class="modal fade" id="modalHair" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content p-4">
@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <!-- Modal Face -->
+    <!-- Modal Lash lifting -->
     <div class="modal fade" id="modalFace" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content p-4">
@@ -94,12 +94,20 @@
 </script>
 
 <style scoped>
+
 .service-card {
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }
 .service-card:hover {
   transform: scale(1.05);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+ 
 }
 
 </style>
