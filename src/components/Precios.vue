@@ -1,17 +1,18 @@
 <script>
 </script>
+
 <template>
-  <section id="pricing" class="pricing-section py-5 py-lg-6">
+  <section id="precios" class="pricing-section py-5 py-lg-6">
     <div class="container">
       <!-- Encabezado -->
       <div class="row">
         <div class="col-lg-10 mx-auto text-center">
-          <h2 class="title display-4 mb-5">Plan de precios</h2>
+          <h2 class="title display-4 mb-5"   data-aos="fade-up">Plan de precios</h2>
         </div>
       </div>
 
       <!-- Lista de precios -->
-      <div class="row g-5">
+      <div class="row g-5"   data-aos="fade-up">
         <!-- Columna izquierda -->
         <div class="col-lg-6">
           <!-- Item -->
