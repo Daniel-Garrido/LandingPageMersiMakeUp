@@ -4,5 +4,5 @@ import vue from '@vitejs/plugin-vue'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: '/' //conectar a github pages
+  //base: 'https//Daniel-Garrido.github.io/LandingPageMersiMakeUp' //conectar a github pages
 })
