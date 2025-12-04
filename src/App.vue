@@ -62,7 +62,7 @@ onUnmounted(() => {
 
         <!-- SECCIÓN IZQUIERDA — LOGO -->
         <a class="navbar-brand d-flex align-items-center" href="#">
-          <img src="/Img/Logo.png" alt="Logo" style="height:40px;">
+          <img src="/Logo.png" alt="Logo" style="height:40px;">
         </a>
 
         <!-- Menu de hamburguesa -->
