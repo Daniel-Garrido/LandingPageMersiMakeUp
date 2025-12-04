@@ -117,7 +117,7 @@ onUnmounted(() => {
           </div>
           <div class="col-lg-6 text-center d-flex justify-content-center align-items-center">
             <figure class="img-sobre-mi" data-aos="fade-up">
-              <img src="/Img/Imgprincipal.png" alt="Retrato de Mersi Garrido" class="img-fluid rounded shadow" />
+               <img src="/Logo.png" alt="Logo" style="height:40px;">
             </figure>
           </div>
         </div>
