@@ -11,7 +11,6 @@
   --color-texto:#000000;
 }
 
-
 h2{
     font-family:  "Didact Gothic", sans-serif;
 }
@@ -40,4 +39,33 @@ a{
     background-color: var(--color-primario);
     border: 1px solid var(--color-secundario);
     transition: all 0.3s ease !important;
+}
+/* Eliminar overflow lateral */
+.pricingSection_Hijo {
+  overflow-x: hidden;
+}
+
+/* Fix parallax en móviles (evita romper el layout) */
+@media (max-width: 768px) {
+  .pricingSection_Hijo {
+    background-attachment: scroll;
+    background-position: center;
+  }
+}
+
+/* Evitar que las líneas punteadas cause overflow */
+.dotsLine_Hijo {
+  border-bottom: 2px dotted currentColor;
+  height: 0;
+  transform: translateY(-2px);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Evitar que nowrap rompa el responsive */
+@media (max-width: 768px) {
+  .priceItem_Hijo h3,
+  .priceItem_Hijo span {
+    white-space: normal;
+  }
 }

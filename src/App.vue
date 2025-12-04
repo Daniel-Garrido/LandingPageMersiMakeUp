@@ -4,18 +4,29 @@ import Servicios from "./components/Servicios.vue";
 import Precios from "./components/Precios.vue";
 import PiePagina from "./components/Footer.vue";
 
-const activeLink = ref("inicio");
 const showButton = ref(false);
-const isOpen = ref(false);
 
-function setActive(section) {
-  activeLink.value = section;
-  isOpen.value = false; // cerrar menú al dar clic en móvil
+
+
+
+//menu desplegable en dispositivos moviles
+function closeMenu() {
+  const menu = document.getElementById("navbarNavAltMarkup");
+
+  if (menu && window.bootstrap) {
+    const bsCollapse = window.bootstrap.Collapse.getInstance(menu);
+    bsCollapse?.hide();
+  }
 }
 
-function toggleMenu() {
-  isOpen.value = !isOpen.value;
+//Menu de navegacion 
+function scrollTo(sectionId) {
+  const section = document.getElementById(sectionId);
+  section?.scrollIntoView({ behavior: "smooth" });
+
+  closeMenu(); // cerrar menú después del clic
 }
+
 
 // Mostrar/ocultar botón según scroll
 function handleScroll() {
@@ -38,71 +49,39 @@ onUnmounted(() => {
 
 <template>
   <div id="app">
-    <!-- Menú de navegación -->
-    <nav class="menu_nav shadow-sm">
-      <div class="container-fluid d-flex justify-content-between align-items-center">
-        <!-- Logo -->
-        <div class="logo">
-          <img src="/Logo.png" alt="Logo" width="120" class="logo-img" />
+
+    <!-- Botón flotante volver arriba -->
+    <a v-if="showButton" href="#" class="back-to-top d-flex align-items-center justify-content-center"
+      @click.prevent="scrollToTop">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Menu de navegacion -->
+    <nav class="contenedor-menu-navegacion navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid d-flex justify-content-between">
+
+        <!-- SECCIÓN IZQUIERDA — LOGO -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="/Img/Logo.png" alt="Logo" style="height:40px;">
+        </a>
+
+        <!-- Menu de hamburguesa -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <!-- SECCIÓN CENTRAL — MENÚ -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" @click.prevent="scrollTo('sobre-mi')">Sobre mí</a>
+            <a class="nav-link" @click.prevent="scrollTo('servicios')">Mis servicios</a>
+            <a class="nav-link" @click.prevent="scrollTo('precios')">Precios</a>
+          </div>
         </div>
 
-        <!-- Links en escritorio -->
-        <ul class="nav-links d-none d-lg-flex">
-          <li>
-            <a href="#"
-               :class="{ active: activeLink === 'inicio' }"
-               @click="setActive('inicio')">Inicio</a>
-          </li>
-          <li>
-            <a href="#"
-               :class="{ active: activeLink === 'servicios' }"
-               @click="setActive('servicios')">Servicios</a>
-          </li>
-          <li>
-            <a href="#"
-               :class="{ active: activeLink === 'precios' }"
-               @click="setActive('precios')">Precios</a>
-          </li>
-          <li>
-            <a href="#"
-               :class="{ active: activeLink === 'contacto' }"
-               @click="setActive('contacto')">Contacto</a>
-          </li>
-        </ul>
-
-        <!-- Botón hamburguesa en móvil -->
-        <button class="hamburger d-lg-none" @click="toggleMenu">
-          <span :class="{ open: isOpen }"></span>
-          <span :class="{ open: isOpen }"></span>
-          <span :class="{ open: isOpen }"></span>
-        </button>
       </div>
-
-      <!-- Menú desplegable solo en móvil -->
-      <transition name="slide">
-        <ul v-if="isOpen" class="nav-menu d-lg-none">
-          <li>
-            <a href="#"
-               :class="{ active: activeLink === 'inicio' }"
-               @click="setActive('inicio')">Inicio</a>
-          </li>
-          <li>
-            <a href="#"
-               :class="{ active: activeLink === 'servicios' }"
-               @click="setActive('servicios')">Servicios</a>
-          </li>
-          <li>
-            <a href="#"
-               :class="{ active: activeLink === 'precios' }"
-               @click="setActive('precios')">Precios</a>
-          </li>
-          <li>
-            <a href="#"
-               :class="{ active: activeLink === 'contacto' }"
-               @click="setActive('contacto')">Contacto</a>
-          </li>
-        </ul>
-      </transition>
     </nav>
 
     <!-- Hero -->
@@ -119,8 +98,8 @@ onUnmounted(() => {
     </section>
 
     <!-- Sobre mí -->
-    <section class="artist-about py-5 bg-white">
-      <div class="container">
+    <section id="sobre-mi" class="artist-about py-5">
+      <div class="container contenedor-sobre-mi p-4">
         <div class="row align-items-center">
           <div class="col-lg-6">
             <p class="text-uppercase text-muted small mb-2" data-aos="fade-up">Makeup Artist</p>
@@ -136,9 +115,9 @@ onUnmounted(() => {
               ¿Mi especialidad? Capturar tu belleza más luminosa.
             </p>
           </div>
-          <div class="col-lg-6 text-center">
+          <div class="col-lg-6 text-center d-flex justify-content-center align-items-center">
             <figure class="img-sobre-mi" data-aos="fade-up">
-              <img src="/Img/SobreMi.jpg" alt="Retrato de Mersi Garrido" class="img-fluid rounded shadow" />
+              <img src="/Img/Imgprincipal.png" alt="Retrato de Mersi Garrido" class="img-fluid rounded shadow" />
             </figure>
           </div>
         </div>
@@ -154,133 +133,44 @@ onUnmounted(() => {
     <!-- Pie de página -->
     <PiePagina />
 
-    <!-- Botón flotante volver arriba -->
-    <a v-if="showButton"
-       href="#"
-       class="back-to-top d-flex align-items-center justify-content-center"
-       @click.prevent="scrollToTop">
-      <i class="fas fa-arrow-up"></i>
-    </a>
+
   </div>
 </template>
 
 <style>
-/* NAVBAR */
-.menu_nav {
-  background-color: var(--color-primario);
-  padding: 1rem;
-  position: relative;
-  z-index: 1000;
+/*Menu de navegacion*/
+.contenedor-menu-navegacion {
+  padding: 25px;
+  background-color: var(--color-primario) !important;
+  border-bottom: 1px solid white;
 }
 
-.logo-img {
-  max-height: 50px;
-  object-fit: contain;
-}
-
-/* Links escritorio */
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-}
-
-.nav-links a {
-  font-size: 1rem;
-  font-weight: 500;
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--color-secundario);
-}
-
-/* Botón hamburguesa */
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  background: none;
-  border: none;
+.navbar-nav a {
   cursor: pointer;
-  z-index: 1100;
-}
-.hamburger span {
-  display: block;
-  height: 3px;
-  background: white;
-  border-radius: 3px;
-  transition: 0.3s;
-}
-.hamburger span.open:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger span.open:nth-child(2) {
-  opacity: 0;
-}
-.hamburger span.open:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  font-size: 20px;
+  font-weight: bold;
 }
 
-/* Menú móvil */
-.nav-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--color-primario);
-  width: 100%;
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  text-align: left;
-}
-.nav-menu li {
-  list-style: none;
-}
-.nav-menu a {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: white;
-  text-decoration: none;
-}
-.nav-menu a:hover,
-.nav-menu a.active {
-  color: var(--color-secundario);
-}
-
-/* Animación de slide */
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 0.3s ease;
-}
-.slide-enter-from {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-.slide-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
 
 /* HERO */
 .hero_content {
   background-color: var(--color-primario);
 }
+
 .hero_content h1 {
   font-size: 45px;
   font-family: "Didact Gothic", sans-serif;
   font-weight: 400;
   color: var(--color-secundario);
 }
-.img-sobre-mi img{
-  width: 80%;
+
+
+.img-sobre-mi img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
 }
+
 /* Botón volver arriba */
 .back-to-top {
   position: fixed;
@@ -297,12 +187,13 @@ onUnmounted(() => {
   line-height: 1;
   z-index: 1000;
 }
+
 .back-to-top:hover {
   background-color: var(--color-secundario);
 }
+
 .back-to-top i {
   color: white;
   text-decoration: none;
 }
 </style>
-

@@ -2,170 +2,129 @@
 </script>
 
 <template>
-  <section id="precios" class="pricing-section py-5 py-lg-6">
-    <div class="container">
+
+  <section id="precios" class="pricingSection_Hijo py-5 py-lg-6">
+    <div class="container contenedor-precios">
+
       <!-- Encabezado -->
-      <div class="row">
-        <div class="col-lg-10 mx-auto text-center">
-          <h2 class="title display-4 mb-5"   data-aos="fade-up">Plan de precios</h2>
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="display-5 fw-bold text-white">Plan de precios</h2>
         </div>
       </div>
 
-      <!-- Lista de precios -->
-      <div class="row g-5"   data-aos="fade-up">
+      <div class="row g-5">
+
         <!-- Columna izquierda -->
         <div class="col-lg-6">
-          <!-- Item -->
-          <article class="price-item mb-5">
-            <div class="price-line d-flex align-items-center">
-              <h3 class="service m-0">Lash Lifting clásico</h3>
-              <span class="dots flex-grow-1 mx-3"></span>
-              <span class="price">$100.00 mxn</span>
+
+          <article class="priceItem_Hijo mb-5">
+            <div class="d-flex align-items-center">
+              <h3 class="h5 mb-0">Lash Lifting clásico</h3>
+              <span class="dotsLine_Hijo flex-grow-1 mx-3"></span>
+              <span class="h6 mb-0">$100.00 mxn</span>
             </div>
-            <p class="desc m-0">
-              Our stylist consults &amp; delivers you a precision bridal makeup.
-            </p>
+          
           </article>
 
-          <article class="price-item mb-5">
-            <div class="price-line d-flex align-items-center">
-              <h3 class="service m-0">Lash Lifting efecto rimel</h3>
-              <span class="dots flex-grow-1 mx-3"></span>
-              <span class="price">$150.00 mxn</span>
+          <article class="priceItem_Hijo mb-5">
+            <div class="d-flex align-items-center">
+              <h3 class="h5 mb-0">Lash Lifting efecto rimel</h3>
+              <span class="dotsLine_Hijo flex-grow-1 mx-3"></span>
+              <span class="h6 mb-0">$150.00 mxn</span>
             </div>
-            <p class="desc m-0">
-              Our stylist consults &amp; delivers you a precision face makeup.
-            </p>
+          
           </article>
 
-          <article class="price-item">
-            <div class="price-line d-flex align-items-center">
-              <h3 class="service m-0">Planchado de cejasr</h3>
-              <span class="dots flex-grow-1 mx-3"></span>
-              <span class="price">$100.00 mxn</span>
+          <article class="priceItem_Hijo">
+            <div class="d-flex align-items-center">
+              <h3 class="h5 mb-0">Planchado de cejas</h3>
+              <span class="dotsLine_Hijo flex-grow-1 mx-3"></span>
+              <span class="h6 mb-0">$100.00 mxn</span>
             </div>
-            <p class="desc m-0">
-              Our stylist consults &amp; delivers you a precision hair color.
-            </p>
+          
           </article>
+
         </div>
 
         <!-- Columna derecha -->
         <div class="col-lg-6">
-          <article class="price-item mb-5">
-            <div class="price-line d-flex align-items-center">
-              <h3 class="service m-0">Cejas HD</h3>
-              <span class="dots flex-grow-1 mx-3"></span>
-              <span class="price">$150.00 mxn</span>
+
+          <article class="priceItem_Hijo mb-5">
+            <div class="d-flex align-items-center">
+              <h3 class="h5 mb-0">Cejas HD</h3>
+              <span class="dotsLine_Hijo flex-grow-1 mx-3"></span>
+              <span class="h6 mb-0">$150.00 mxn</span>
             </div>
-            <p class="desc m-0">
-              Our stylist consults &amp; delivers you a precision hair makeup.
-            </p>
+            
           </article>
 
-          <article class="price-item mb-5">
-            <div class="price-line d-flex align-items-center">
-              <h3 class="service m-0">Cejas 4K</h3>
-              <span class="dots flex-grow-1 mx-3"></span>
-              <span class="price">$180.00 mxn</span>
+          <article class="priceItem_Hijo mb-5">
+            <div class="d-flex align-items-center">
+              <h3 class="h5 mb-0">Cejas 4K</h3>
+              <span class="dotsLine_Hijo flex-grow-1 mx-3"></span>
+              <span class="h6 mb-0">$180.00 mxn</span>
             </div>
-            <p class="desc m-0">
-              Our stylist consults &amp; delivers you a precision event makeup.
-            </p>
+           
           </article>
 
-          <article class="price-item">
-            <div class="price-line d-flex align-items-center">
-              <h3 class="service m-0">Maquillaje</h3>
-              <span class="dots flex-grow-1 mx-3"></span>
-              <span class="price">$200.00</span>
+          <article class="priceItem_Hijo">
+            <div class="d-flex align-items-center">
+              <h3 class="h5 mb-0">Maquillaje</h3>
+              <span class="dotsLine_Hijo flex-grow-1 mx-3"></span>
+              <span class="h6 mb-0">$200.00 mxn </span>
             </div>
-            <p class="desc m-0">
-              Our stylist consults &amp; delivers you a precision nail color.
-            </p>
+          
           </article>
+
         </div>
       </div>
+
     </div>
   </section>
-
 </template>
+
 
 <style>
 
-/* --------- Variables --------- */
-:root {
-  --prx-text: #fff;
-  --prx-muted: rgba(255, 255, 255, .8);
-  --prx-accent: #f0d6b9;
-  --prx-overlay: rgba(80, 55, 30, .45);
+.contenedor-precios span{
+  color: white;
 }
 
-/* --------- Sección con PARALLAX --------- */
-.pricing-section {
-  color: var(--prx-text);
-  position: relative;
+.contenedor-precios h2{
+  font-size: 3em;
+  font-family: "Cormorant Garamond", serif;
+}
+  
+
+.contenedor-precios h3{
+  font-size: 30px !important;
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* Fondo parallax */
+.pricingSection_Hijo {
   background-image:
-    linear-gradient(var(--prx-overlay), var(--prx-overlay)),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("/Img/Parallax.jpg");
   background-size: cover;
-  background-position: right center;
+  background-position: center right;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
-/* --------- Encabezado --------- */
-.pricing-section .eyebrow {
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--prx-accent);
-  font-size: .95rem;
-  margin: 0;
-}
-
-.pricing-section .title {
-  font-family: "Georgia", "Times New Roman", serif;
-  letter-spacing: .01em;
-}
-
-/* --------- Items --------- */
-.price-item .service {
-  font-family: "Georgia", "Times New Roman", serif;
-  font-weight: 600;
-  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
-  color: var(--prx-text);
-}
-
-.price-item .price {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  color: var(--prx-text);
-  white-space: nowrap;
-}
-
-/* Línea punteada entre nombre y precio */
-.price-item .dots {
-  border-bottom: 2px dotted rgba(255, 255, 255, .6);
+/* Línea punteada entre texto y precio */
+.dotsLine_Hijo {
+  border-bottom: 2px dotted currentColor;
   height: 0;
   transform: translateY(-2px);
 }
 
-/* Descripción */
-.price-item .desc {
-  color: var(--prx-muted);
-  font-style: italic;
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
-  margin-top: .85rem;
-  line-height: 1.8;
+/* Separación y diseño base del item */
+.priceItem_Hijo h3,
+.priceItem_Hijo span {
+  white-space: nowrap;
 }
 
-/* Ajustes responsive */
-@media (max-width: 575.98px) {
-  .pricing-section {
-    background-position: center right;
-  }
-
-  .price-item .dots {
-    border-bottom-width: 1px;
-  }
-}
 </style>
